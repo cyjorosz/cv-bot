@@ -232,7 +232,8 @@ app.post('/webhook', (req, res) => {
 function verifyRequestSignature(req, res, buf) {
   var signature = req.headers["x-hub-signature"];
 
-  if (!signature) {
+  // Removing temprarily
+  /*if (!signature) {
     // For testing, let's log an error. In production, you should throw an
     // error.
     console.error("Couldn't validate the signature.");
@@ -248,7 +249,7 @@ function verifyRequestSignature(req, res, buf) {
     if (signatureHash != expectedHash) {
       throw new Error("Couldn't validate the request signature.");
     }
-  }
+  }*/
 }
 
 app.listen(PORT);
